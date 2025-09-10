@@ -4,7 +4,8 @@
   "description": "Electron app to download YouTube audio and play it",
   "main": "main.js",
   "scripts": {
-    "start": "env -u ELECTRON_RUN_AS_NODE electron ."
+    "start": "env -u ELECTRON_RUN_AS_NODE electron .",
+    "build": "tsc"
   },
   "dependencies": {
     "ffmpeg-static": "^5.2.0",
@@ -14,6 +15,8 @@
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
-    "electron": "^38.0.0"
+    "electron": "^38.0.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
   }
 }
