@@ -52,7 +52,7 @@ class DownloadService {
         '--ffmpeg-location', this.binaryManager.getFfmpegPath(),
         '-o', finalOutPath
       ];
-      const cp = new YTDlpWrap(binPath).exec(args);
+      const cp = ytdlp.exec(args);
 
       const onLine = (buf) => {
         const line = buf.toString();

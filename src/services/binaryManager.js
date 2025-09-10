@@ -1,13 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 const { app } = require('electron');
-const ffmpeg = require('fluent-ffmpeg');
 const ffmpegPath = require('ffmpeg-static');
 const https = require('https');
 const { URL } = require('url');
 const YTDlpWrap = require('yt-dlp-wrap').default;
 
-ffmpeg.setFfmpegPath(ffmpegPath);
 
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -53,11 +51,10 @@ class BinaryManager {
   constructor() {
     this.ytDlpPath = null;
     this.ytDlpReady = null;
-    this.ffmpegPath = ffmpegPath;
   }
 
   getFfmpegPath() {
-    return this.ffmpegPath;
+    return ffmpegPath;
   }
 
   async ensureYtDlp() {
